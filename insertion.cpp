@@ -107,6 +107,18 @@ class Linkedlist{
             size--;
         }
     }
+    void deleteval(Node* target){
+        if(head==target){
+            head=head->next;
+            return;}
+            Node* temp=head;
+        while(temp->next!=target){
+            temp=temp->next;
+        }
+        temp->next=temp->next->next;
+        size--;
+        return;
+    }
     void display(){
         Node* temp=head;
         while(temp!=NULL){
@@ -134,10 +146,13 @@ int main(){
     ll.display();
     ll.deleteAttail();
     ll.display();
-    ll.deleteAtidx(2);
-    ll.display();
+    //ll.deleteAtidx(2);
+    //ll.display();
    cout<<ll.size<<endl;
    if(ll.search(40))cout<<"Yes"<<endl;
    else cout<<"No"<<endl;
+   //ll.deleteAtidx(1);
+   //ll.display();
+  // ll.deleteval(10);
     return 0;
 }
